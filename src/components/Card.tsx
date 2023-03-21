@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 import {ReactNode} from "react";
 
 
@@ -12,16 +12,19 @@ interface CardProps {
     height: string;
     children?: ReactNode | React.ReactChild;
     variant?: CardVariant;
-    func?: () => number;
-    onclick?: () => void;
+    onclick: (num: number) => void;
 }
 
 
 
 
-const Card: FC<CardProps> = ({width, height, children, variant , func, onclick}) => {
+const Card: FC<CardProps> = ({width, height, children, variant ,  onclick}) => {
+
+
+    const [state, setState] = useState(0)
+
     return (
-        <div  onClick={onclick} style={{width, height,  border: variant === CardVariant.out ? '10px solid orangered' : '2px solid orangered'}}>
+        <div  onClick={() => onclick(state)} style={{width, height,  border: variant === CardVariant.out ? '10px solid orangered' : '2px solid orangered'}}>
             {children}
 
         </div>
