@@ -7,9 +7,9 @@ interface UserItemProps {
 
 const UserItem: FC<UserItemProps> = ({user}) => {
     return (
-        <div>
-            <div style={{padding: '1rem'}}>{user.name} lives in the city {user.address.city}</div>
-        </div>
+        <>
+             <div>{user.name} lives {user.address.city}</div>
+        </>
     );
 };
 

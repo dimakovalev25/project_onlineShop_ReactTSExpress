@@ -1,5 +1,6 @@
 export interface IAddress {
-    city: string;
+    street?: string;
+    city?: string;
 }
 
 export interface IUser {
@@ -13,5 +14,4 @@ export interface ITodo {
     id: number;
     title: string;
     completed: boolean;
-
 }

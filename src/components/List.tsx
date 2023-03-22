@@ -1,23 +1,16 @@
-import React, {FC, MouseEvent, useCallback, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 
-interface ListProps<T> {
+interface ListProps<T>{
     items: T[];
-    renderItem: (item :T) => React.ReactNode
+    renderItem:  (item : T) => React.ReactNode
+
 }
 
-export default function List<T> (props: ListProps<T>) {
-
-    const [items, setItems] = useState([]);
-
-
+export default function  List<T>(props: ListProps<T>) {
     return (
         <div>
-
             {props.items.map(props.renderItem)}
-
-
         </div>
     )
+    
 }
-
-

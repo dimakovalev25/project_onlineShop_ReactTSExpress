@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
 import {ITodo} from "../types/types";
+import Input
+    from "@react-buddy/ide-toolbox/dist/previews/tools-panel/props-edit-table/table-items/table-item/table-item-control/input";
 
 interface TodoItemProps {
     todo: ITodo;
@@ -7,9 +9,9 @@ interface TodoItemProps {
 
 const TodoItem: FC<TodoItemProps> = ({todo}) => {
     return (
-        <div>
-            <div style={{padding: '1rem'}}><input checked={todo.completed} type={"checkbox"}></input>{todo.id} : {todo.title}</div>
-        </div>
+        <>
+            <input type='checkbox' checked={todo.completed}/>{todo.title}<br/>
+        </>
     );
 };
 
